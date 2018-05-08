@@ -23,12 +23,12 @@ app.layout = html.Div(children=[
     dcc.Dropdown(
                 id='station',
                 options=[{'label': i, 'value': i} for i in ciclopi['StazPrelievo'].unique()],
-                value='Comune Palazzo Blu'
+                value='Comune Palazzo Blu',
             ),
     # creating a graph done in Notebook 03 - Statistics
     dcc.Graph(id='rpm-graph', style={'width':600}),
 
-])
+], style={'width':600})
 
 @app.callback(Output('rpm-graph', 'figure'),
 [Input('station','value')])
